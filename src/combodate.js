@@ -92,6 +92,9 @@
             //replace spaces with &nbsp;
             tpl = tpl.replace(/ /g, '&nbsp;');
 
+			//wrap divider in <span>
+			tpl = tpl.replace(/}([^{]*){/g, "}<span class=\"combodate-divider\">\$1</span>{");
+						
             //second pass
             $.each(this.map, function(k, v) {
                 v = v[0];
